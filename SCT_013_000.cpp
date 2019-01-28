@@ -41,7 +41,7 @@ float SCT013000::current() {
 
         // Calculate average RMS current
         _Irms = ((ratio * sqrt(_sum_squared_current / _Number_of_Samples)) - _noise);
-        if (_Irms<0.08) _Irms=0; //get rid of null values
+        if (_Irms<0.00) _Irms=0; //get rid of null values
         _sum_squared_current = 0; // Reset accumulator
 
         return _Irms;
